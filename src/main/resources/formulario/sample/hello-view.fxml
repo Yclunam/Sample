@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000; -fx-background-radius: 30;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formulario.sample.HelloController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="280.0" style="-fx-background-color: #4B5F83; -fx-background-radius: 30;">
+         <children>
+            <Pane layoutX="251.0" prefHeight="400.0" prefWidth="55.0" style="-fx-background-color: #4B5F83;" />
+            <Label layoutX="52.0" layoutY="320.0" text="Keeping Score" textFill="#fcfafa">
+               <font>
+                  <Font name="Roboto Slab Regular" size="30.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="189.0" fitWidth="200.0" layoutX="58.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\3225052.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="126.0" layoutY="277.0" textAlignment="CENTER" fx:id="welcomeText" />
+         </children>
+      </Pane>
+      <TextField alignment="CENTER" layoutX="357.0" layoutY="253.0" prefHeight="26.0" prefWidth="200.0" promptText="Contraseña" style="-fx-background-radius: 8;" fx:id="contra">
+         <font>
+            <Font name="Roboto Slab ExtraLight" size="18.0" />
+         </font>
+      </TextField>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="404.0" layoutY="334.0" mnemonicParsing="false" onAction="#onHelloButtonClick" prefHeight="37.0" prefWidth="106.0" style="-fx-background-color: #4B5F83; -fx-background-radius: 10;" text="Ingresar" textFill="#e8e6e6">
+         <font>
+            <Font name="Roboto Condensed" size="18.0" />
+         </font>
+
+      </Button>
+      <TextField alignment="CENTER" layoutX="357.0" layoutY="174.0" prefHeight="37.0" prefWidth="200.0" promptText="Usuario" style="-fx-background-radius: 8;" fx:id="nombre">
+         <font>
+            <Font name="Roboto Slab ExtraLight" size="18.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="99.0" fitWidth="110.0" layoutX="405.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\user_icon-icons.com_66546.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
