@@ -30,7 +30,7 @@
             </Pane>
             <Pane layoutX="55.0" layoutY="97.0" prefHeight="61.0" prefWidth="351.0" style="-fx-background-color: #111111; -fx-background-radius: 20;">
                <children>
-                  <Button layoutX="102.0" layoutY="11.0" mnemonicParsing="false" style="-fx-background-color: #111111;" text="Ir a Cajero" textFill="#eeeb22">
+                  <Button fx:id="Cajero" layoutX="102.0" layoutY="11.0" mnemonicParsing="false" onAction="#Cajero" style="-fx-background-color: #111111;" text="Ir a Cajero" textFill="#eeeb22">
                      <font>
                         <Font name="Roboto Black" size="20.0" />
                      </font>
@@ -38,7 +38,7 @@
                </children></Pane>
             <Pane layoutX="55.0" layoutY="190.0" prefHeight="61.0" prefWidth="351.0" style="-fx-background-color: #111111; -fx-background-radius: 20;">
                <children>
-                  <Button layoutX="34.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #111111;" text="Modificar Existencias" textFill="#eeeb22">
+                  <Button fx:id="Datos" layoutX="34.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: #111111;" text="Modificar Existencias" textFill="#eeeb22">
                      <font>
                         <Font name="Roboto Black" size="20.0" />
                      </font>
@@ -46,7 +46,7 @@
                </children></Pane>
             <Pane layoutX="55.0" layoutY="291.0" prefHeight="61.0" prefWidth="351.0" style="-fx-background-color: #111111; -fx-background-radius: 16;">
                <children>
-                  <Button layoutX="87.0" layoutY="12.0" mnemonicParsing="false" style="-fx-background-color: #111111;" text="Crear Usuario" textFill="#eeeb22">
+                  <Button fx:id="Crearusuario" layoutX="87.0" layoutY="12.0" mnemonicParsing="false" onAction="#Crearusuario" style="-fx-background-color: #111111;" text="Crear Usuario" textFill="#eeeb22">
                      <font>
                         <Font name="Roboto Black" size="20.0" />
                      </font>

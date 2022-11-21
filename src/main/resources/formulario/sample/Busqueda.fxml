@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formulario.sample.Busqueda">
+   <children>
+      <Pane layoutX="5.0" layoutY="6.0" prefHeight="92.0" prefWidth="340.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 25;">
+         <children>
+            <Label layoutX="70.0" layoutY="15.0" text="Busqueda">
+               <font>
+                  <Font name="Roboto Slab Black" size="24.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="6.0" layoutY="82.0" prefHeight="310.0" prefWidth="340.0" style="-fx-background-color: #4b5f82; -fx-background-radius: 25;">
+         <children>
+            <Pane layoutY="-9.0" prefHeight="36.0" prefWidth="340.0" style="-fx-background-color: #4b5f82;">
+               <children>
+                  <ImageView fitHeight="44.0" fitWidth="36.0" layoutX="19.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\1022319.png" />
+                     </image></ImageView>
+               </children>
+            </Pane>
+            <Pane layoutX="17.0" layoutY="14.0" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;">
+               <children>
+                  <Label layoutX="12.0" layoutY="11.0" prefHeight="19.0" prefWidth="283.0" text="Puedes buscar por codigo o nombre de producto">
+                     <font>
+                        <Font name="Roboto Light" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <TextField fx:id="nombreproducto" alignment="CENTER" layoutX="96.0" layoutY="102.0" />
+            <TextField fx:id="codigoproducto" alignment="CENTER" layoutX="96.0" layoutY="170.0" />
+            <Label layoutX="71.0" layoutY="71.0" text="Ingresa Nombre del producto">
+               <font>
+                  <Font name="Roboto Slab Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="76.0" layoutY="139.0" text="Ingresa codigo del producto">
+               <font>
+                  <Font name="Roboto Slab Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="buscar" layoutX="115.0" layoutY="205.0" mnemonicParsing="false" onAction="#buscar" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;" text="Buscar">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="20.0" layoutY="251.0" text="Codigo">
+               <font>
+                  <Font name="Roboto Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="253.0" text="Nombre">
+               <font>
+                  <Font name="Roboto Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="199.0" layoutY="253.0" text="Precio">
+               <font>
+                  <Font name="Roboto Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="281.0" layoutY="254.0" text="Unds">
+               <font>
+                  <Font name="Roboto Black" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Bcodigo" alignment="CENTER" editable="false" layoutX="17.0" layoutY="276.0" prefHeight="9.0" prefWidth="51.0" style="-fx-background-color: #4b5f82;">
+               <font>
+                  <Font name="Roboto Light" size="12.0" />
+               </font>
+               <effect>
+                  <ColorAdjust>
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect></TextField>
+            <TextField fx:id="Bnombre" alignment="CENTER" editable="false" layoutX="82.0" layoutY="276.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #4b5f82;">
+               <effect>
+                  <ColorAdjust>
+                     <input>
+                        <Glow />
+                     </input>
+                  </ColorAdjust>
+               </effect></TextField>
+            <TextField fx:id="Bprecio" alignment="CENTER" editable="false" layoutX="184.0" layoutY="276.0" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4b5f82;">
+               <effect>
+                  <Glow />
+               </effect></TextField>
+            <TextField fx:id="Bunidades" alignment="CENTER" editable="false" layoutX="266.0" layoutY="276.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #4b5f82;">
+               <effect>
+                  <Glow />
+               </effect></TextField>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

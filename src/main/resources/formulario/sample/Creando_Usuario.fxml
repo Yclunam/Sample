@@ -37,7 +37,6 @@
                         <Font name="Roboto Slab ExtraLight" size="20.0" />
                      </font></Label>
                   <TextField fx:id="documento" alignment="CENTER" layoutX="241.0" layoutY="59.0" prefHeight="25.0" prefWidth="183.0" style="-fx-background-radius: 8;" />
-                  <TextField fx:id="rol" alignment="CENTER" layoutX="241.0" layoutY="115.0" prefHeight="25.0" prefWidth="183.0" style="-fx-background-radius: 8;" />
                   <TextField fx:id="Nick" alignment="CENTER" layoutX="241.0" layoutY="160.0" prefHeight="25.0" prefWidth="183.0" style="-fx-background-radius: 8;" />
                   <TextField fx:id="password" alignment="CENTER" layoutX="241.0" layoutY="206.0" prefHeight="14.0" prefWidth="183.0" style="-fx-background-radius: 8;" />
                   <Button layoutX="150.0" layoutY="253.0" mnemonicParsing="false" onAction="#Pruebalogin" style="-fx-background-color: #000000; -fx-background-radius: 12;" text="Crear Usuario" textFill="#eeebeb">
@@ -50,6 +49,7 @@
                         <Font name="Roboto Slab Medium" size="18.0" />
                      </font>
                   </Label>
+                  <ComboBox fx:id="comboBoxRol" layoutX="241.0" layoutY="115.0" prefHeight="25.0" prefWidth="183.0" promptText="--ELIGE EL ROL--" style="-fx-border-radius: 12; -fx-background-color: #ffffff; -fx-background-radius: 12; -fx-border-color: #111111; -fx-background-position: center;" />
                </children>
             </Pane>
             <ImageView fitHeight="37.0" fitWidth="41.0" layoutX="24.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">

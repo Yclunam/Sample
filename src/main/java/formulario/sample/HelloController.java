@@ -1,15 +1,13 @@
 package formulario.sample;
-
-
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
+
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,6 +26,7 @@ public class HelloController {
     Connection con;
     ResultSet rs;
     ResultSet rs2;
+    String ventana;
     Stage stage;
     @FXML
     protected void onHelloButtonClick() {
@@ -46,7 +45,7 @@ public class HelloController {
         conectar();
         int resultado = 0;
         String pass = contra.getText();
-        String usuario = nombre.getText();
+        String usuario = nombre.getText().toUpperCase();
         String SQL = "select * from lista_usuarios where nick = '"+usuario+"'and password ='"+pass+"'";
 
         try {
@@ -63,26 +62,44 @@ public class HelloController {
                     mensaje.showAndWait();
                     rs2 = st.executeQuery(rol);
                     while(rs2.next()){
-                        if (rs2.getString("rol")=="Admin"){
-                            System.out.println("Holis admistrador");
-                        }
-                        else{
-                            System.out.println("Holis Cajero");
-                        }
+                        ventana=(rs2.getString("rol").replace(" ","").toUpperCase());
+                    }
+                    if (ventana.equals("ADMINISTRADOR")){
+                        System.out.println("Admin");
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Administrador.fxml"));
+                        Parent root =fxmlLoader.load();
+                        VentanaAdministrador controlador = fxmlLoader.getController();
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.show();
+
+                    }else{
+                        System.out.println("Cajero");
+                        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
+                        Parent root =fxmlLoader.load();
+                        VentanaCajero controlador = fxmlLoader.getController();
+                        Scene scene = new Scene(root);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.show();
                     }
 
-                }
-            }else {
+                    }
+
+                }else {
                 Alert mensaje = new Alert(Alert.AlertType.CONFIRMATION);
                 mensaje.setTitle("Ventana Confirmacion");
                 mensaje.setContentText("TU USUARIO O CONTRASEÑA SON INCORRECTOS");
                 mensaje.showAndWait();
                 System.out.println("Error de registro");
             }
-
-        } catch (SQLException e) {
-            System.out.println("Error "+e.getMessage());
+            } catch (SQLException ex) {
+            throw new RuntimeException(ex);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
     }
 
 }
