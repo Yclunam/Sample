@@ -58,7 +58,7 @@
                   <Font name="Roboto Slab Black" size="15.0" />
                </font>
             </Button>
-            <Button alignment="CENTER" layoutX="421.0" layoutY="393.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #111111; -fx-background-radius: 12;" text="Agregar a Inventario" textFill="WHITE">
+            <Button fx:id="Ca_agre_inventario" alignment="CENTER" layoutX="421.0" layoutY="393.0" mnemonicParsing="false" onAction="#Ca_agre_inventario" prefHeight="34.0" prefWidth="180.0" style="-fx-background-color: #111111; -fx-background-radius: 12;" text="Agregar a Inventario" textFill="WHITE">
                <font>
                   <Font name="Roboto Slab Black" size="15.0" />
                </font>

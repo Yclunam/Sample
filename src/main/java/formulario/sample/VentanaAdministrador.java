@@ -12,6 +12,8 @@ import java.io.IOException;
 
 public class VentanaAdministrador {
     @FXML
+    private Button Datos;
+    @FXML
     private Button Cajero;
     @FXML
     private Button Crearusuario;
@@ -28,6 +30,15 @@ public class VentanaAdministrador {
 
     public void Cajero(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
+        Parent root =fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Datos(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Modificar_Base_Datos.fxml"));
         Parent root =fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formulario.sample.Eliminar">
+   <children>
+      <Pane layoutX="6.0" layoutY="5.0" prefHeight="90.0" prefWidth="350.0" style="-fx-background-color: #f6265a; -fx-background-radius: 30; -fx-border-color: #111111; -fx-border-radius: 30; -fx-border-width: 2;">
+         <children>
+            <Label layoutX="76.0" layoutY="22.0" text="Eliminando" textFill="#fcfcfc">
+               <font>
+                  <Font name="Roboto Slab Black" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="6.0" layoutY="66.0" prefHeight="60.0" prefWidth="350.0" style="-fx-background-color: #111111;">
+         <children>
+            <ImageView fitHeight="72.0" fitWidth="68.0" layoutX="10.0" layoutY="-64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\istockphoto-1282369003-612x612-removebg-preview.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="101.0" prefHeight="298.0" prefWidth="350.0" style="-fx-background-color: #111111; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="54.0" layoutY="2.0" text="Ingresa Codigo del Producto" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Eli_codigo" alignment="CENTER" layoutX="72.0" layoutY="100.0" prefHeight="25.0" prefWidth="206.0">
+               <font>
+                  <Font name="Roboto Slab ExtraBold" size="24.0" />
+               </font>
+            </TextField>
+            <Button fx:id="Eliminar" alignment="CENTER" layoutX="27.0" layoutY="235.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: #f6265a; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Eli_Buscar" alignment="CENTER" layoutX="201.0" layoutY="235.0" mnemonicParsing="false" onAction="#Eli_Buscar" prefHeight="39.0" prefWidth="123.0" style="-fx-background-color: #24236e; -fx-background-radius: 20;" text="Buscar" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Button>
+         </children></Pane>
+   </children>
+</AnchorPane>

@@ -15,6 +15,8 @@ import java.util.List;
 
 public class VentanaCajero {
     @FXML
+    private Button Ca_agre_inventario;
+    @FXML
     private TextField Ca_Eliminar;
     @FXML
     private Button Ca_modificar;
@@ -88,5 +90,14 @@ public class VentanaCajero {
 
     public void Ca_modificar(ActionEvent actionEvent) {
         lista.remove(Integer.parseInt(Ca_Eliminar.getText()));
+    }
+
+    public void Ca_agre_inventario(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
+        Parent root =fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 }

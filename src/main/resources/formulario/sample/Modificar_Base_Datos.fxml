@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formulario.sample.ModificarBaseDatos">
+   <children>
+      <Pane layoutX="4.0" layoutY="7.0" prefHeight="92.0" prefWidth="590.0" style="-fx-background-color: #111111; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="29.0" layoutY="17.0" text="Opciones de Administrador" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="23.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="4.0" layoutY="80.0" prefHeight="314.0" prefWidth="590.0" style="-fx-background-color: #4b5f82; -fx-background-radius: 30;">
+         <children>
+            <Pane layoutY="-12.0" prefHeight="52.0" prefWidth="590.0" style="-fx-background-color: #4b5f82;">
+               <children>
+                  <Button fx:id="Modificar_Base" layoutX="25.0" layoutY="21.0" mnemonicParsing="false" onAction="#Modificar_Base" prefHeight="43.0" prefWidth="204.0" style="-fx-background-color: #111111; -fx-background-radius: 15; -fx-border-color: #ffffff; -fx-border-radius: 15; -fx-border-width: 2;" text="Modificar Existencias" textFill="#fdfc16">
+                     <font>
+                        <Font name="Roboto Slab Black" size="15.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+            <Button fx:id="Eliminar" layoutX="362.0" layoutY="11.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="43.0" prefWidth="204.0" style="-fx-background-color: #111111; -fx-background-radius: 15; -fx-border-color: #ffffff; -fx-border-radius: 15; -fx-border-width: 2;" text="Eliminar Producto" textFill="#fdfc16">
+               <font>
+                  <Font name="Roboto Slab Black" size="15.0" />
+               </font>
+            </Button>
+            <Pane layoutX="23.0" layoutY="66.0" prefHeight="236.0" prefWidth="542.0" style="-fx-background-color: #111111; -fx-background-radius: 20; -fx-border-color: #ffffff; -fx-border-radius: 20; -fx-border-width: 2;">
+               <children>
+                  <Label layoutX="163.0" layoutY="7.0" text="Creando Nuevo Producto" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Slab Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="46.0" text="Codigo:" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Slab ExtraLight" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="80.0" text="Nombre Del Producto :" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Slab ExtraLight" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="116.0" text="Cantidad :" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Slab ExtraLight" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="20.0" layoutY="152.0" text="Precio :" textFill="WHITE">
+                     <font>
+                        <Font name="Roboto Slab ExtraLight" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Agre_codigo" alignment="CENTER" layoutX="242.0" layoutY="45.0" prefHeight="25.0" prefWidth="227.0" />
+                  <TextField fx:id="Agre_nombre" alignment="CENTER" layoutX="242.0" layoutY="78.0" prefHeight="25.0" prefWidth="227.0" />
+                  <TextField fx:id="Agre_cantidad" alignment="CENTER" layoutX="242.0" layoutY="114.0" prefHeight="25.0" prefWidth="227.0" />
+                  <TextField fx:id="Agre_precio" alignment="CENTER" layoutX="242.0" layoutY="150.0" prefHeight="25.0" prefWidth="227.0" />
+                  <Button fx:id="Btn_Agregar" alignment="CENTER" layoutX="188.0" layoutY="187.0" mnemonicParsing="false" onAction="#Btn_Agregar" prefHeight="35.0" prefWidth="166.0" style="-fx-background-color: #111111; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: #ffffff; -fx-border-width: 2;" text="+ Agregar" textFill="#04fc06">
+                     <font>
+                        <Font name="Roboto Slab ExtraBold" size="15.0" />
+                     </font></Button>
+               </children>
+            </Pane>
+         </children></Pane>
+   </children>
+</AnchorPane>

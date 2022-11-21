@@ -47,7 +47,18 @@ public class HelloApplication extends Application {
 //        stage.setScene(scene);
 //        stage.show();
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load());
+//        stage.setTitle("Creando Usuario");
+//        stage.setScene(scene2);
+//        stage.show();
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Modificar_Base_Datos.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load());
+//        stage.setTitle("Creando Usuario");
+//        stage.setScene(scene2);
+//        stage.show();
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar.fxml"));
         Scene scene2 = new Scene(fxmlLoader.load());
         stage.setTitle("Creando Usuario");
         stage.setScene(scene2);
