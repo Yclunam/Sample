@@ -1,19 +1,41 @@
 package formulario.sample;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
-public class VentanaCajero {
+public class VentanaCajero  {
+    @FXML
+    private Button Btn_Confirmar;
+    @FXML
+    private Button Eliminar;
+    @FXML
+    private TextField Modificar_cantidad;
+    @FXML
+    private TextField Modificar_codigo;
+    @FXML
+    private TableView<Compra> Table_Factura;
+    @FXML
+    private TableColumn<Compra,String> Product_ID ;
+    @FXML
+    private TableColumn<Compra,String> Product_Name;
+    @FXML
+    private TableColumn<Compra, Integer> Product_Cantidad;
+    @FXML
+    private TableColumn<Compra,Integer> Product_Unitario;
+    @FXML
+    private TableColumn<Compra,Integer> Product_Total;
+    @FXML
+    private TableColumn<Compra,Integer> Product_Disponible;
     @FXML
     private Button Ca_agre_inventario;
     @FXML
@@ -22,10 +44,7 @@ public class VentanaCajero {
     private Button Ca_modificar;
     @FXML
     private TextField Total;
-    @FXML
-    private Button Btn_Calcular;
-    @FXML
-    private ListView Ventana_Calculadora;
+
     @FXML
     private TextField Ca_codigo;
     @FXML
@@ -36,7 +55,9 @@ public class VentanaCajero {
     Connection con;
     ResultSet resultSet;
     ResultSet rs;
-    List <Integer> lista = new ArrayList<>();
+    ObservableList<Compra> Lista = FXCollections.observableArrayList();
+
+//    DefaultTableModel model = (DefaultTableModel) Table_Factura.getModel();
 
     public void Boton_busqueda(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Busqueda.fxml"));
@@ -56,48 +77,62 @@ public class VentanaCajero {
     }
 
     public void Ca_Btn_agregar(ActionEvent actionEvent) {
-        conectar();
 
+        conectar();
         String codigo =Ca_codigo.getText();
         String SQL = "select * from productos where codigo = '"+codigo+"'";
         try {
             Statement st = con.createStatement();
             rs = st.executeQuery(SQL);
-            if(rs.next()){
-                String mensaje = "Codigo: "+rs.getString("codigo")+" / Nombre: "+rs.getString("nombre")+" / Cantidad Venta: "+Ca_cantidad.getText()+" / Precio UND:  "+rs.getString("precio");
-                Ventana_Calculadora.getItems().add(mensaje);
-                lista.add(Integer.parseInt(Ca_cantidad.getText())*Integer.parseInt(rs.getString("precio")));
+            while(rs.next()){
+                int total = Integer.parseInt(Ca_cantidad.getText())*Integer.parseInt(rs.getString("precio"));
+                 Lista.add(
+                        new Compra(codigo,
+                                rs.getString("nombre"),
+                                Integer.parseInt(Ca_cantidad.getText()),
+                                Integer.parseInt(rs.getString("precio")),
+                                total,
+                                Integer.parseInt(rs.getString("cantidad")))
+                 );
+                System.out.println("Cantidad de elementos en la lista:" + Lista.size());
+                Product_ID.setCellValueFactory(new PropertyValueFactory<Compra,String>("ID"));
+                Product_Name.setCellValueFactory(new PropertyValueFactory<Compra,String>("Name"));
+                Product_Cantidad.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Cantidad"));
+                Product_Unitario.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Valor_Unit"));
+                Product_Total.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Valor_Total"));
+                Product_Disponible.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Disponibles"));
+                Table_Factura.setItems(Lista);
+                Ca_codigo.setText("");
+                Ca_cantidad.setText("");
 
-            }else{
-                Alert mensaje = new Alert(Alert.AlertType.ERROR);
-                mensaje.setTitle("Ventana Advertencia");
-                mensaje.setContentText("NO TENEMOS NINGUN PRODUCTO CON ESTE CODIGO: "+Ca_codigo.getText());
-                mensaje.showAndWait();}
-            System.out.println(lista);
-            Ca_codigo.setText("");
-            Ca_cantidad.setText("");
-        } catch (SQLException e) {
+            }
+}catch (SQLException e) {
             System.out.println("El error es: "+ e);
         }
-
-
-    }
-
-    public void Btn_Calcular(ActionEvent actionEvent) {
-        int cuenta = lista.stream().mapToInt(Integer::intValue).sum();
-        Total.setText(Integer.toString(cuenta));
-    }
+}
 
     public void Ca_modificar(ActionEvent actionEvent) {
-        lista.remove(Integer.parseInt(Ca_Eliminar.getText()));
+        int index = Table_Factura.getSelectionModel().getSelectedIndex();
+        Compra elemento = Table_Factura.getSelectionModel().getSelectedItem();
+        Modificar_codigo.setText(Integer.toString(index));
+        elemento.setCantidad(Integer.parseInt(Modificar_cantidad.getText()));
+        elemento.setValor_Total(elemento.getValor_Unit()*elemento.getCantidad());
+        Lista.set(index,elemento);
+
     }
 
-    public void Ca_agre_inventario(ActionEvent actionEvent) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
-        Parent root =fxmlLoader.load();
-        Scene scene = new Scene(root);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+
+    public void Eliminar(ActionEvent actionEvent) {
+        int index = Table_Factura.getSelectionModel().getSelectedIndex();
+        Lista.remove(index);
+    }
+
+
+    public void Btn_Confirmar(ActionEvent actionEvent) {
+        int cuenta =0;
+        for (int i=0;i<Lista.size();i++){
+            cuenta +=Lista.get(i).getValor_Total();
+        }
+        Total.setText("$ "+Integer.toString(cuenta));
     }
 }
