@@ -19,7 +19,7 @@ public class HelloApplication extends Application {
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
 //        Scene scene2 = new Scene(fxmlLoader.load());
 //        stage.setTitle("Login");
-//        stage.setScene(scene);
+//        stage.setScene(scene2);
 //        stage.show();
         //Ventana_Crear_Usuario
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Creando_Usuario.fxml"));
@@ -37,7 +37,7 @@ public class HelloApplication extends Application {
 //
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
         Scene scene2 = new Scene(fxmlLoader.load());
-        stage.setTitle("Ventana cajero");
+        stage.setTitle("Administrador");
         stage.setScene(scene2);
         stage.show();
 

@@ -15,6 +15,9 @@ import java.sql.*;
 
 public class VentanaCajero  {
     @FXML
+    private Button Inventario;
+
+    @FXML
     private Button Btn_Confirmar;
     @FXML
     private Button Eliminar;
@@ -58,6 +61,15 @@ public class VentanaCajero  {
     ObservableList<Compra> Lista = FXCollections.observableArrayList();
 
 //    DefaultTableModel model = (DefaultTableModel) Table_Factura.getModel();
+
+    public void Btn_Inventario(ActionEvent actionEvent) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
+        Parent root =fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void Boton_busqueda(ActionEvent actionEvent) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Busqueda.fxml"));
@@ -114,7 +126,6 @@ public class VentanaCajero  {
     public void Ca_modificar(ActionEvent actionEvent) {
         int index = Table_Factura.getSelectionModel().getSelectedIndex();
         Compra elemento = Table_Factura.getSelectionModel().getSelectedItem();
-        Modificar_codigo.setText(Integer.toString(index));
         elemento.setCantidad(Integer.parseInt(Modificar_cantidad.getText()));
         elemento.setValor_Total(elemento.getValor_Unit()*elemento.getCantidad());
         Lista.set(index,elemento);
@@ -135,4 +146,7 @@ public class VentanaCajero  {
         }
         Total.setText("$ "+Integer.toString(cuenta));
     }
+
+
+
 }
