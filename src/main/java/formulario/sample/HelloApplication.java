@@ -29,17 +29,17 @@ public class HelloApplication extends Application {
 //        stage.show();
 
         //Ventana_Administrados
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Administrador.fxml"));
-        //Scene scene2 = new Scene(fxmlLoader.load());
-        //stage.setTitle("Administrador");
-        //stage.setScene(scene2);
-        //stage.show();
-//
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Administrador.fxml"));
         Scene scene2 = new Scene(fxmlLoader.load());
         stage.setTitle("Administrador");
         stage.setScene(scene2);
         stage.show();
+//
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load());
+//        stage.setTitle("Administrador");
+//        stage.setScene(scene2);
+//        stage.show();
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Busqueda.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
