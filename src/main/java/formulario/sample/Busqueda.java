@@ -7,7 +7,11 @@ import javafx.scene.control.TextField;
 
 import java.sql.*;
 
-public class Busqueda {
+/**
+ * La clase busqueda controla la ventana busqueda la cual nos ayuda a consultar en la base de datos
+ * la informacion de un producto segun su codigo o nombre.
+ */
+public class Busqueda extends HelloController{
     @FXML
     private TextField Bcodigo;
     @FXML
@@ -20,9 +24,6 @@ public class Busqueda {
     private TextField nombreproducto;
     @FXML
     private TextField codigoproducto;
-    PreparedStatement ps;
-    Connection con;
-    ResultSet resultSet;
     ResultSet rs;
     String SQL;
     public void buscar(ActionEvent actionEvent) {
@@ -49,16 +50,11 @@ public class Busqueda {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
-
+        /**
+         * Se detecta si el campo que se ingreso es codigo o nombre y despues se hace la busqueda
+         * en la base de datos con esa informacion. Se llenan las casillas con la informacion obtenida de la base de datos.
+         * de no existir un producto con ese nombre o codigo no se llenan las casillas.
+         */
     }
-    public void conectar(){
-        try {
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
 
-            System.out.println("Conectado");
-        }catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-    }
 }

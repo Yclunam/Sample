@@ -1,6 +1,10 @@
 package formulario.sample;
 
-public     class Compra{
+/**
+ * Esta clase nos ayuda a desarrollar un objeto para realizar una lista con los datos de una compra en curso.
+ * necesario en la ventana de cajero.
+ */
+public class Compra {
     private String ID;
     private String Name;
     private int Cantidad;

@@ -57,12 +57,14 @@ public class VentanaCajero  {
     public Button Ca_Btn_agregar;
     PreparedStatement ps;
     Connection con;
-    ResultSet resultSet;
     ResultSet rs;
     ObservableList<Compra> Lista = FXCollections.observableArrayList();
 
 //    DefaultTableModel model = (DefaultTableModel) Table_Factura.getModel()
     public void Btn_Inventario(ActionEvent actionEvent) throws IOException {
+        /**
+         * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
+         */
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Agregar.fxml"));
         Parent root =fxmlLoader.load();
         Scene scene = new Scene(root);
@@ -71,6 +73,9 @@ public class VentanaCajero  {
         stage.show();
     }
     public void Boton_busqueda(ActionEvent actionEvent) throws IOException {
+        /**
+         * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
+         */
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Busqueda.fxml"));
         Parent root =fxmlLoader.load();
         Scene scene = new Scene(root);
@@ -79,6 +84,9 @@ public class VentanaCajero  {
         stage.show();
     }
     public void conectar(){
+        /**
+         * Conecta con la base de datos de mysql.
+         */
         try {
             con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
             System.out.println("Conectado");
@@ -88,13 +96,17 @@ public class VentanaCajero  {
     }
 
     public void Ca_Btn_agregar(ActionEvent actionEvent) {
-
+        /**
+         * Con este metodo se logra la busqueda de un producto segun su codigo el cual se ingresa en la casilla correspomdiente.
+         * de igual forma una cantidad es pedida y con estos datos agregamos a la lista los datos del producto y el precio a pagar
+         * por la cantidad solicitada en la casilla.
+         */
         conectar();
         String codigo =Ca_codigo.getText();
         String SQL = "select * from productos where codigo = '"+codigo+"'";
         try {
             Statement st = con.createStatement();
-            rs = st.executeQuery(SQL);
+            rs = st.executeQuery(SQL);/*Se realiza el requerimiento a mysql para que los datos del producto se llene en la lista y hacer las respectivas cuentas*/
             while(rs.next()){
                 int total = Integer.parseInt(Ca_cantidad.getText())*Integer.parseInt(rs.getString("precio"));
                  Lista.add(
@@ -104,8 +116,7 @@ public class VentanaCajero  {
                                 Integer.parseInt(rs.getString("precio")),
                                 total,
                                 Integer.parseInt(rs.getString("cantidad")))
-                 );
-                System.out.println("Cantidad de elementos en la lista:" + Lista.size());
+                 );/*en la lineas anteriores se agrega a una lista observable un objeto de la clase compra y asi se va agregando a la lista de compra*/
                 Product_ID.setCellValueFactory(new PropertyValueFactory<Compra,String>("ID"));
                 Product_Name.setCellValueFactory(new PropertyValueFactory<Compra,String>("Name"));
                 Product_Cantidad.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Cantidad"));
@@ -113,7 +124,8 @@ public class VentanaCajero  {
                 Product_Total.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Valor_Total"));
                 Product_Disponible.setCellValueFactory(new PropertyValueFactory<Compra,Integer>("Disponibles"));
                 Table_Factura.setItems(Lista);
-                Calcular();
+                /*se llena las casillas de la lista con la informacion de los prodcutos*/
+                Calcular();/*este metodo nos sirve para llevar la cuenta total de los productos que se van agregando a la lista de compras*/
                 Ca_codigo.setText("");
                 Ca_cantidad.setText("");
 
@@ -124,6 +136,12 @@ public class VentanaCajero  {
 }
 
     public void Ca_modificar(ActionEvent actionEvent) {
+        /**
+         * En este metodo se implementa la modificacion de un item de la lista de compras.
+         * al seleccionar el item con el mouse de la lista de compras se cambia el valor de la cantidad solicitada.
+         * el valor por el cual se remplaza es el de la casilla Modificar_cantidad.
+         * y final mente se vuelve hacer la cuenta del total de la lista de compras.
+         */
         int index = Table_Factura.getSelectionModel().getSelectedIndex();
         Compra elemento = Table_Factura.getSelectionModel().getSelectedItem();
         elemento.setCantidad(Integer.parseInt(Modificar_cantidad.getText()));
@@ -135,6 +153,10 @@ public class VentanaCajero  {
 
 
     public void Eliminar(ActionEvent actionEvent) {
+        /**
+         * Este metodo elimina un item seleccionado de la lista de compras.
+         * y vuelve hacer el total de los elementos restantes en la lista de compras.
+         */
         int index = Table_Factura.getSelectionModel().getSelectedIndex();
         Lista.remove(index);
         Calcular();
@@ -142,6 +164,10 @@ public class VentanaCajero  {
 
 
     public void Btn_Confirmar(ActionEvent actionEvent) throws SQLException {
+        /**
+         * El metodo esta elaborado para realizare el requerimiento para modificar la base de datos
+         * la cual se debe restar la cantidad disponible de producto con la cantidad comprada.
+         */
         for (int i=0;i<Lista.size();i++){
 
             modificar_base_datos(
@@ -155,6 +181,9 @@ public class VentanaCajero  {
     }
 
     public  void modificar_base_datos (String nombre,String cantidad,String precio,String codigo) throws SQLException {
+        /**
+         * Se realiza el requerimiento a mysql para que se actualice de la base de datos la cantidad disponible del producto comprado.
+         */
 
         conectar();
         String SQL = "UPDATE productos SET nombre = ?,cantidad=?,precio=? WHERE codigo = ?";
@@ -176,6 +205,9 @@ public class VentanaCajero  {
 
 
     public void Calcular() {
+        /**
+         * hace la cuenta de los productos en la lista de compras.
+         */
         int cuenta =0;
         for (int i=0;i<Lista.size();i++){
             cuenta +=Lista.get(i).getValor_Total();
