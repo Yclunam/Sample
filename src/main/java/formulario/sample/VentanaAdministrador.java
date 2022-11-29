@@ -15,6 +15,8 @@ import java.io.IOException;
  */
 public class VentanaAdministrador {
     @FXML
+    private Button Eliminar_Usuario;
+    @FXML
     private Button Datos;
     @FXML
     private Button Cajero;
@@ -51,6 +53,18 @@ public class VentanaAdministrador {
          * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
          */
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Modificar_Base_Datos.fxml"));
+        Parent root =fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Eliminar_Usuario(ActionEvent actionEvent) throws IOException {
+        /**
+         * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
+         */
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar_Usuario.fxml"));
         Parent root =fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();

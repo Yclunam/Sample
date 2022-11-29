@@ -2,6 +2,7 @@ package formulario.sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.stage.Stage;
@@ -16,11 +17,11 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         //Ventana_Login
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-//        Scene scene2 = new Scene(fxmlLoader.load());
-//        stage.setTitle("Login");
-//        stage.setScene(scene2);
-//        stage.show();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Scene scene2 = new Scene(fxmlLoader.load());
+        stage.setTitle("Login");
+        stage.setScene(scene2);
+        stage.show();
         //Ventana_Crear_Usuario
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Creando_Usuario.fxml"));
 //        Scene scene2 = new Scene(fxmlLoader.load());
@@ -52,13 +53,19 @@ public class HelloApplication extends Application {
 //        stage.setTitle("Creando Usuario");
 //        stage.setScene(scene2);
 //        stage.show();
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Modificar_Base_Datos.fxml"));
-        Scene scene2 = new Scene(fxmlLoader.load());
-        stage.setTitle("Creando Usuario");
-        stage.setScene(scene2);
-        stage.show();
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Modificar_Base_Datos.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load());
+//        stage.setTitle("Creando Usuario");
+//        stage.setScene(scene2);
+//        stage.show();
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load());
+//        stage.setTitle("Creando Usuario");
+//        stage.setScene(scene2);
+//        stage.show();
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar_Usuario.fxml"));
 //        Scene scene2 = new Scene(fxmlLoader.load());
 //        stage.setTitle("Creando Usuario");
 //        stage.setScene(scene2);

@@ -44,9 +44,9 @@
                   <ComboBox fx:id="comboBoxRol" layoutX="241.0" layoutY="115.0" prefHeight="25.0" prefWidth="183.0" promptText="--ELIGE EL ROL--" style="-fx-border-radius: 12; -fx-background-color: #ffffff; -fx-background-radius: 12; -fx-border-color: #111111; -fx-background-position: center;" />
                </children>
             </Pane>
-            <ImageView fitHeight="37.0" fitWidth="41.0" layoutX="24.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="45.0" fitWidth="47.0" layoutX="19.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\user_icon-icons.com_66546.png" />
+                  <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\agregar_Usuario.png" />
                </image>
             </ImageView>
             <Label layoutX="77.0" layoutY="13.0" text="Creando Usuario" textFill="#ebe8e8">

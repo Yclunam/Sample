@@ -18,6 +18,7 @@
          </children></Pane>
       <Pane layoutX="6.0" layoutY="82.0" prefHeight="310.0" prefWidth="340.0" style="-fx-background-color: #4b5f82; -fx-background-radius: 25;">
          <children>
+            <Pane layoutX="9.0" layoutY="190.0" prefHeight="110.0" prefWidth="324.0" style="-fx-border-color: #ffffff; -fx-border-radius: 20; -fx-border-width: 2;" />
             <Pane layoutY="-9.0" prefHeight="36.0" prefWidth="340.0" style="-fx-background-color: #4b5f82;">
                <children>
                   <ImageView fitHeight="44.0" fitWidth="36.0" layoutX="19.0" layoutY="-55.0" pickOnBounds="true" preserveRatio="true">
@@ -26,7 +27,7 @@
                      </image></ImageView>
                </children>
             </Pane>
-            <Pane layoutX="17.0" layoutY="14.0" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;">
+            <Pane layoutX="17.0" layoutY="9.0" prefHeight="42.0" prefWidth="308.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;">
                <children>
                   <Label layoutX="12.0" layoutY="11.0" prefHeight="19.0" prefWidth="283.0" text="Puedes buscar por codigo o nombre de producto">
                      <font>
@@ -35,46 +36,46 @@
                   </Label>
                </children>
             </Pane>
-            <TextField fx:id="nombreproducto" alignment="CENTER" layoutX="96.0" layoutY="102.0" />
-            <TextField fx:id="codigoproducto" alignment="CENTER" layoutX="96.0" layoutY="170.0" />
-            <Label layoutX="71.0" layoutY="71.0" text="Ingresa Nombre del producto">
+            <TextField fx:id="nombreproducto" alignment="CENTER" layoutX="168.0" layoutY="64.0" prefHeight="25.0" prefWidth="156.0" />
+            <TextField fx:id="codigoproducto" alignment="CENTER" layoutX="167.0" layoutY="106.0" prefHeight="25.0" prefWidth="156.0" />
+            <Label layoutX="9.0" layoutY="66.0" text="Nombre del producto :">
                <font>
                   <Font name="Roboto Slab Black" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="76.0" layoutY="139.0" text="Ingresa codigo del producto">
+            <Label layoutX="10.0" layoutY="109.0" text="Codigo del producto :">
                <font>
                   <Font name="Roboto Slab Black" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="buscar" layoutX="115.0" layoutY="205.0" mnemonicParsing="false" onAction="#buscar" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;" text="Buscar">
+            <Button fx:id="buscar" layoutX="115.0" layoutY="143.0" mnemonicParsing="false" onAction="#buscar" prefHeight="37.0" prefWidth="104.0" style="-fx-background-color: #f3e8d6; -fx-background-radius: 20;" text="Buscar">
                <font>
                   <Font name="Roboto Slab Black" size="18.0" />
                </font>
             </Button>
-            <Label layoutX="20.0" layoutY="251.0" text="Codigo">
+            <Label layoutX="35.0" layoutY="198.0" text="Codigo">
                <font>
                   <Font name="Roboto Black" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="102.0" layoutY="253.0" text="Nombre">
+            <Label layoutX="201.0" layoutY="197.0" text="Nombre">
                <font>
                   <Font name="Roboto Black" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="199.0" layoutY="253.0" text="Precio">
+            <Label layoutX="183.0" layoutY="247.0" text="Precio Unitario">
                <font>
                   <Font name="Roboto Black" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="281.0" layoutY="254.0" text="Unds">
+            <Label layoutX="43.0" layoutY="247.0" text="Unds">
                <font>
                   <Font name="Roboto Black" size="14.0" />
                </font>
             </Label>
-            <TextField fx:id="Bcodigo" alignment="CENTER" editable="false" layoutX="17.0" layoutY="276.0" prefHeight="9.0" prefWidth="51.0" style="-fx-background-color: #4b5f82;">
+            <TextField fx:id="Bcodigo" alignment="CENTER" editable="false" layoutX="20.0" layoutY="219.0" prefHeight="25.0" prefWidth="81.0" style="-fx-background-color: #4b5f82;">
                <font>
-                  <Font name="Roboto Light" size="12.0" />
+                  <Font name="Roboto Light" size="13.0" />
                </font>
                <effect>
                   <ColorAdjust>
@@ -83,22 +84,31 @@
                      </input>
                   </ColorAdjust>
                </effect></TextField>
-            <TextField fx:id="Bnombre" alignment="CENTER" editable="false" layoutX="82.0" layoutY="276.0" prefHeight="25.0" prefWidth="91.0" style="-fx-background-color: #4b5f82;">
+            <TextField fx:id="Bnombre" alignment="CENTER" editable="false" layoutX="130.0" layoutY="221.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4b5f82;">
                <effect>
                   <ColorAdjust>
                      <input>
                         <Glow />
                      </input>
                   </ColorAdjust>
-               </effect></TextField>
-            <TextField fx:id="Bprecio" alignment="CENTER" editable="false" layoutX="184.0" layoutY="276.0" prefHeight="25.0" prefWidth="69.0" style="-fx-background-color: #4b5f82;">
+               </effect>
+               <font>
+                  <Font name="Roboto Light" size="13.0" />
+               </font></TextField>
+            <TextField fx:id="Bprecio" alignment="CENTER" editable="false" layoutX="130.0" layoutY="266.0" prefHeight="25.0" prefWidth="191.0" style="-fx-background-color: #4b5f82;">
                <effect>
                   <Glow />
-               </effect></TextField>
-            <TextField fx:id="Bunidades" alignment="CENTER" editable="false" layoutX="266.0" layoutY="276.0" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #4b5f82;">
+               </effect>
+               <font>
+                  <Font name="Roboto Light" size="13.0" />
+               </font></TextField>
+            <TextField fx:id="Bunidades" alignment="CENTER" editable="false" layoutX="21.0" layoutY="266.0" prefHeight="1.0" prefWidth="81.0" style="-fx-background-color: #4b5f82;">
                <effect>
                   <Glow />
-               </effect></TextField>
+               </effect>
+               <font>
+                  <Font name="Roboto Light" size="13.0" />
+               </font></TextField>
          </children>
       </Pane>
    </children>

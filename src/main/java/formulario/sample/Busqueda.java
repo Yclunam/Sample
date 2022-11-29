@@ -2,6 +2,7 @@ package formulario.sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -26,26 +27,36 @@ public class Busqueda extends HelloController{
     private TextField codigoproducto;
     ResultSet rs;
     String SQL;
+    String SQL_Aviso;
     public void buscar(ActionEvent actionEvent) {
         conectar();
         if (nombreproducto.getText().length()!=0){
             String pr = nombreproducto.getText().toUpperCase();
+            SQL_Aviso = "Con nombre: "+pr;
             SQL = "select * from productos where nombre = '"+pr+"'";
             nombreproducto.setText("");
         }else{
             String pr = codigoproducto.getText();
+            SQL_Aviso = "Con codigo: "+pr;
             SQL = "select * from productos where codigo = '"+pr+"'";
             codigoproducto.setText("");
         }
         try{
             Statement st = con.createStatement();
             rs = st.executeQuery(SQL);
-            while(rs.next()){
+            if(rs.next()){
                 Bcodigo.setText(rs.getString("codigo"));
                 Bnombre.setText(rs.getString("nombre"));
-                Bprecio.setText(rs.getString("precio"));
+                Bprecio.setText("$ "+rs.getString("precio"));
                 Bunidades.setText(rs.getString("cantidad"));
 
+            }else {
+                Alert mensaje = new Alert(Alert.AlertType.INFORMATION);
+                mensaje.setTitle("Advertencia");
+                mensaje.setContentText("no existe el producto: "+SQL_Aviso);
+                mensaje.showAndWait();
+                nombreproducto.setText("");
+                codigoproducto.setText("");
             }
         } catch (Exception e) {
             throw new RuntimeException(e);

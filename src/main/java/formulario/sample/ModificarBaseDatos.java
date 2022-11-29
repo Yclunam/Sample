@@ -21,6 +21,8 @@ import java.sql.*;
  */
 public class ModificarBaseDatos extends HelloController{
     @FXML
+    private Button Buscar_producto;
+    @FXML
     private Button Eliminar;
     @FXML
     private Button Modificar_Base;
@@ -101,6 +103,18 @@ public class ModificarBaseDatos extends HelloController{
          * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
          */
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar.fxml"));
+        Parent root =fxmlLoader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void Buscar_producto(ActionEvent actionEvent) throws IOException {
+        /**
+         * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.
+         */
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Busqueda.fxml"));
         Parent root =fxmlLoader.load();
         Scene scene = new Scene(root);
         Stage stage = new Stage();
