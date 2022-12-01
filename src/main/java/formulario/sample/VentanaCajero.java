@@ -60,7 +60,6 @@ public class VentanaCajero  {
     ResultSet rs;
     ObservableList<Compra> Lista = FXCollections.observableArrayList();
 
-//    DefaultTableModel model = (DefaultTableModel) Table_Factura.getModel()
     public void Btn_Inventario(ActionEvent actionEvent) throws IOException {
         /**
          * Este metodo es mas un llamado a otra ventanta donde la implementacion del metodo ya esta hecha.

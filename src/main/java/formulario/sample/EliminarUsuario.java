@@ -19,6 +19,9 @@ public class EliminarUsuario extends HelloController{
     String SQL;
     String SQL_Aviso;
     public void Eliminar(ActionEvent actionEvent) {
+        /**
+         * Elimina usuario que correspondan a los campos llenados.
+         */
         conectar();
 
         if (Eli_nick.getText().length()!=0){

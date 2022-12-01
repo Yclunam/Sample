@@ -34,6 +34,9 @@ public class HelloController {
         validarUsuario();
     }
     public  void conectar(){
+        /**
+         * Conectar con base de datos en MySQL
+         */
         try {
             con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
 
