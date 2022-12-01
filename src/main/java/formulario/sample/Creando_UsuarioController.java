@@ -14,7 +14,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.ResourceBundle;
 
-public class Creando_UsuarioController implements Initializable {
+/**
+ * Controla la ventana de crear usuario.
+ * realiza la conexion y agrega la informacion a la base de datos.
+ */
+public class Creando_UsuarioController extends HelloController implements Initializable {
     @FXML
     private ComboBox comboBoxRol;
 
@@ -26,32 +30,14 @@ public class Creando_UsuarioController implements Initializable {
     @FXML
     private TextField documento;
 
-    @FXML
-    private TextField rol;
-  
-
     PreparedStatement ps;
     Connection con;
     ResultSet resultSet;
-    ResultSet rs;
-
-
-
-
-    public void conectar(){
-        try {
-            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
-
-            System.out.println("Conectado");
-        }catch (SQLException e){
-            throw new RuntimeException(e);
-        }
-    }
-
     public void Pruebalogin(ActionEvent actionEvent)  {
 
         try{
             conectar();
+            con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
             //Revisando Nick
             boolean supervisor = false;
             ps = con.prepareStatement("select * from lista_usuarios");
@@ -78,6 +64,11 @@ public class Creando_UsuarioController implements Initializable {
         }catch(SQLException e){
             System.out.println("Error de conexión:" + e.getMessage());
         }
+        /**
+         * Este boton realiza la comprobacion de las reglas propuestas para crear un nuevo usuario.
+         * si se cumplen las condiciones, se hace la creacion de usuario en la base de datos.
+         * se muestra en consola los usuarios existentes.
+         */
     }
 
     private boolean revision(String x, String z) {
@@ -90,9 +81,14 @@ public class Creando_UsuarioController implements Initializable {
                 if (nuevo.equals(old)) {
                     supervisor = true;
                 }
-
         }
         return supervisor;
+        /**
+         * Esta funcion revisa el que los String ingresados no sean iguales.
+         * @param x una variable tipo String.
+         * @param z una variable tipo String.
+         * @return Devuelve un boolean supervisor(false si no son iguales y true si lo son).
+         */
     }
 
     private boolean revisarnumero(String x) {
@@ -104,6 +100,11 @@ public class Creando_UsuarioController implements Initializable {
             aprueba = true;
         }
         return aprueba;
+        /**
+         * Esta funcion revisa si el String ingresado no comienza con numeros.
+         * @param x una variable tipo String.
+         * @return Devuelve un boolean supervisor(false-no contiene numeros, true-si contiene numeros).
+         */
     }
     public void agregarusuario() throws SQLException {
         //Agregando usuario a la base de datos
@@ -125,6 +126,10 @@ public class Creando_UsuarioController implements Initializable {
         mensaje.setTitle("Ventana Confirmacion");
         mensaje.setContentText("El usuario ha sido creado y agregado a la base de datos");
         mensaje.showAndWait();
+        /**
+         * Esta funcion agrega al nuevo usuario a la base de datos de mysql.
+         * da un mensaje de confirmacion.
+         */
     }
 
 
@@ -132,6 +137,9 @@ public class Creando_UsuarioController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         comboBoxRol.getItems().add("Administrador");
         comboBoxRol.getItems().add("Cajero");
+        /**
+         * Se inician los valores de comboBox.
+         */
     }
 }
 

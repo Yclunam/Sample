@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="formulario.sample.EliminarUsuario">
+   <children>
+      <Pane layoutX="6.0" layoutY="5.0" prefHeight="90.0" prefWidth="350.0" style="-fx-background-color: #f6265a; -fx-background-radius: 30; -fx-border-color: #111111; -fx-border-radius: 30; -fx-border-width: 2;">
+         <children>
+            <Label layoutX="84.0" layoutY="22.0" text="Eliminando Usuario" textFill="#fcfcfc">
+               <font>
+                  <Font name="Roboto Slab Black" size="20.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Pane layoutX="6.0" layoutY="66.0" prefHeight="60.0" prefWidth="350.0" style="-fx-background-color: #111111;">
+         <children>
+            <ImageView fitHeight="49.0" fitWidth="46.0" layoutX="25.0" layoutY="-50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\Eliminar_usuario.png" />
+               </image></ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="6.0" layoutY="101.0" prefHeight="298.0" prefWidth="350.0" style="-fx-background-color: #111111; -fx-background-radius: 30;">
+         <children>
+            <Label layoutX="69.0" layoutY="-13.0" text="Documento Del Usuario" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Eli_codigo" alignment="CENTER" layoutX="71.0" layoutY="22.0" prefHeight="25.0" prefWidth="204.0">
+               <font>
+                  <Font name="Roboto Slab ExtraBold" size="24.0" />
+               </font>
+            </TextField>
+            <Button fx:id="Eliminar" alignment="CENTER" layoutX="88.0" layoutY="235.0" mnemonicParsing="false" onAction="#Eliminar" prefHeight="49.0" prefWidth="177.0" style="-fx-background-color: #f6265a; -fx-background-radius: 20;" text="Eliminar" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="73.0" layoutY="120.0" text="Nick Del Usuario" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Eli_nick" alignment="CENTER" layoutX="72.0" layoutY="158.0" prefHeight="25.0" prefWidth="204.0">
+               <font>
+                  <Font name="Roboto Slab ExtraBold" size="24.0" />
+               </font>
+            </TextField>
+            <Label layoutX="168.0" layoutY="83.0" text="Ó" textFill="WHITE">
+               <font>
+                  <Font name="Roboto Slab Black" size="18.0" />
+               </font>
+            </Label>
+         </children></Pane>
+   </children>
+</AnchorPane>

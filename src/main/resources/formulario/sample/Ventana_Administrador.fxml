@@ -17,15 +17,6 @@
                         <Font name="Roboto Slab Regular" size="20.0" />
                      </font>
                   </Label>
-                  <Pane layoutX="324.0" layoutY="12.0" prefHeight="35.0" prefWidth="119.0" style="-fx-background-color: #4b5f82; -fx-background-radius: 15;">
-                     <children>
-                        <Label layoutX="15.0" layoutY="3.0" prefHeight="28.0" prefWidth="102.0" text="Cerrar Sesión" textFill="#eeeeee">
-                           <font>
-                              <Font name="Roboto Slab Regular" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
                </children>
             </Pane>
             <Pane layoutX="55.0" layoutY="97.0" prefHeight="61.0" prefWidth="351.0" style="-fx-background-color: #111111; -fx-background-radius: 20;">
@@ -44,14 +35,6 @@
                      </font>
                   </Button>
                </children></Pane>
-            <Pane layoutX="55.0" layoutY="291.0" prefHeight="61.0" prefWidth="351.0" style="-fx-background-color: #111111; -fx-background-radius: 16;">
-               <children>
-                  <Button fx:id="Crearusuario" layoutX="87.0" layoutY="12.0" mnemonicParsing="false" onAction="#Crearusuario" style="-fx-background-color: #111111;" text="Crear Usuario" textFill="#eeeb22">
-                     <font>
-                        <Font name="Roboto Black" size="20.0" />
-                     </font>
-                  </Button>
-               </children></Pane>
             <ImageView fitHeight="50.0" fitWidth="58.0" layoutX="301.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\cashier2_118071.png" />
@@ -60,10 +43,21 @@
                <image>
                   <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\ima3.png" />
                </image></ImageView>
-            <ImageView fitHeight="61.0" fitWidth="58.0" layoutX="305.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="Crearusuario" layoutX="275.0" layoutY="314.0" mnemonicParsing="false" onAction="#Crearusuario" prefHeight="50.0" prefWidth="163.0" style="-fx-background-color: #111111; -fx-border-radius: 20; -fx-border-width: 2; -fx-border-color: #ffffff; -fx-background-radius: 20;" text="Crear Usuario" textFill="#24ed42">
+               <font>
+                  <Font name="Roboto Black" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="Eliminar_Usuario" layoutX="28.0" layoutY="317.0" mnemonicParsing="false" onAction="#Eliminar_Usuario" prefHeight="50.0" prefWidth="163.0" style="-fx-background-color: #111111; -fx-background-radius: 20; -fx-border-color: #ffffff; -fx-border-radius: 20; -fx-border-width: 2;" text="Eliminar Usuario" textFill="#ed2424">
+               <font>
+                  <Font name="Roboto Black" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="70.0" fitWidth="82.0" layoutX="198.0" layoutY="291.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="E:\Universidad_2022_2\Sample\src\main\java\formulario\sample\imagenes\6073873.png" />
-               </image></ImageView>
+               </image>
+            </ImageView>
          </children></Pane>
    </children>
 </AnchorPane>

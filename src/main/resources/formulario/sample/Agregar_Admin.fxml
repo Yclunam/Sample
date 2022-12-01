@@ -56,12 +56,12 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Agre_nombre" alignment="CENTER" editable="false" layoutX="144.0" layoutY="74.0" prefHeight="17.0" prefWidth="164.0">
+            <TextField fx:id="Agre_nombre" alignment="CENTER" layoutX="144.0" layoutY="74.0" prefHeight="17.0" prefWidth="164.0">
                <font>
                   <Font size="14.0" />
                </font>
             </TextField>
-            <TextField fx:id="Agre_precio" alignment="CENTER" editable="false" layoutX="144.0" layoutY="125.0" prefHeight="17.0" prefWidth="164.0">
+            <TextField fx:id="Agre_precio" alignment="CENTER" layoutX="144.0" layoutY="125.0" prefHeight="17.0" prefWidth="164.0">
                <font>
                   <Font size="14.0" />
                </font>

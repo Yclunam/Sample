@@ -15,6 +15,7 @@ import java.sql.*;
 
 
 public class HelloController {
+
     @FXML
     private Label welcomeText;
     @FXML
@@ -32,7 +33,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         validarUsuario();
     }
-    public void conectar(){
+    public  void conectar(){
         try {
             con= DriverManager.getConnection("jdbc:mysql://localhost:3306/usuarios", "root", "Luna9508");
 
@@ -40,6 +41,7 @@ public class HelloController {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+
     }
     public void validarUsuario(){
         conectar();

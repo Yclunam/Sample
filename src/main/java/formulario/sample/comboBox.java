@@ -8,6 +8,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+/**
+ * Clase que nos ayuda a editar las opciones de tipo de usuario en la ventana de creacion de estos.
+ */
+
 public class comboBox extends Application {
 
     Stage window;
@@ -27,9 +31,8 @@ public class comboBox extends Application {
 
         comboBox = new ComboBox<>();
         comboBox.getItems().addAll(
-                "cat",
-                "dog",
-                "bird"
+                "Cajero",
+                "Administrador"
         );
 
         comboBox.setPromptText("Please select one");
