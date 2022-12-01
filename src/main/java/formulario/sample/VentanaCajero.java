@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.*;
 
 public class VentanaCajero  {
+    public Button Cancelar_Compra;
     @FXML
     private Button Btn_Calcular;
     @FXML
@@ -212,5 +213,9 @@ public class VentanaCajero  {
             cuenta +=Lista.get(i).getValor_Total();
         }
         Total.setText("$ "+Integer.toString(cuenta));
+    }
+
+    public void Cancelar_Compra(ActionEvent actionEvent) {
+        Lista.clear();
     }
 }

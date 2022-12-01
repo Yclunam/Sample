@@ -36,19 +36,19 @@ public class HelloApplication extends Application {
 //        stage.setScene(scene2);
 //        stage.show();
 //
-<<<<<<< HEAD
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
-        Scene scene2 = new Scene(fxmlLoader.load(), 650, 450);
-        stage.setTitle("Creando Usuario");
-        stage.setScene(scene2);
-        stage.show();
-=======
+
+//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
+//        Scene scene2 = new Scene(fxmlLoader.load(), 650, 450);
+//        stage.setTitle("Creando Usuario");
+//        stage.setScene(scene2);
+//        stage.show();
+
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Ventana_Cajero.fxml"));
 //        Scene scene2 = new Scene(fxmlLoader.load());
 //        stage.setTitle("Administrador");
 //        stage.setScene(scene2);
 //        stage.show();
->>>>>>> 41407fafd6ea08b9fe36edccae0fe54554e139db
+
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Busqueda.fxml"));
 //        Scene scene = new Scene(fxmlLoader.load());
@@ -72,15 +72,14 @@ public class HelloApplication extends Application {
 //        stage.setTitle("Creando Usuario");
 //        stage.setScene(scene2);
 //        stage.show();
-<<<<<<< HEAD
-=======
+
 
 //        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Eliminar_Usuario.fxml"));
 //        Scene scene2 = new Scene(fxmlLoader.load());
 //        stage.setTitle("Creando Usuario");
 //        stage.setScene(scene2);
 //        stage.show();
->>>>>>> 41407fafd6ea08b9fe36edccae0fe54554e139db
+
     }
 
 
