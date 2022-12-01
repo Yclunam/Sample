@@ -46,4 +46,4 @@ Intellij ide
 
 * **proyecto de la asignatura:** Programacion en Java
 * **Universidad Nacional de Colombia**
-* **Profesor:**Juan Bernardo Gomez Mendoza
+* **Profesor:Juan Bernardo Gomez Mendoza
