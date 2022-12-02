@@ -40,7 +40,7 @@ Intellij ide
 
 
 * **Yefferson Luna** - *Programacion - diseño Interfaz* 
-* **Fulanito Detal** - *Programacion - Documentacion* 
+* **Luis Daniel Lopez** - *Programacion - Documentacion* 
 
 ## Realizado Para
 
